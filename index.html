@@ -7,7 +7,7 @@
   <title>Kyotee — Share life with the people who matter</title>
   <meta name="description" content="Kyotee is a simple, private social app for sharing moments with the people who actually matter. Posts, messages, profiles—without the noise." />
 
-  <!-- Icons (replace with your files if you have them) -->
+  <!-- Icons -->
   <link rel="icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 
@@ -65,6 +65,8 @@
     }
     a{ color: inherit; text-decoration: none }
     .container{ width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 20px }
+
+    /* Buttons */
     .btn{
       display:inline-flex; align-items:center; gap:.6rem;
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
@@ -77,6 +79,8 @@
     .btn.secondary{
       background: transparent; border: 1px solid #ffffff22; color: var(--text)
     }
+
+    /* Header / Nav */
     header{
       position: sticky; top: 0; z-index: 50;
       backdrop-filter: saturate(1.2) blur(10px);
@@ -87,22 +91,18 @@
       display:flex; align-items:center; justify-content:space-between; min-height: 64px;
     }
     .brand{
-      display:flex; align-items:center; gap:.7rem; font-weight:800; letter-spacing:.2px;
+      display:flex; align-items:center; gap:.55rem; font-weight:800; letter-spacing:.2px;
     }
-    .logo{
-      width: 28px; height: 28px; border-radius: 7px;
-      background: conic-gradient(from 30deg, var(--accent), var(--accent-2));
-      display:inline-block;
-      box-shadow: 0 4px 18px rgba(124,58,237,.45);
+    .logo-img{
+      width: 20px; height: 20px; object-fit: contain; display:inline-block; vertical-align: middle;
     }
     .navlinks{ display:flex; gap: 1rem; align-items:center }
     .navlinks a{ padding:.4rem .6rem; color: var(--text-dim) }
     .navlinks a.active, .navlinks a:hover{ color: var(--text) }
     .mobile-toggle{ display: none; background: none; border: none; color: var(--text); font-size: 1.25rem }
 
-    .hero{
-      padding: clamp(48px, 6vw, 96px) 0;
-    }
+    /* Hero */
+    .hero{ padding: clamp(48px, 6vw, 96px) 0; }
     .hero-grid{
       display:grid; gap: 28px; align-items:center;
       grid-template-columns: 1.15fr 1fr;
@@ -114,6 +114,8 @@
       color: var(--text-dim); font-size: clamp(16px, 2.2vw, 18px); margin: 0 0 26px;
     }
     .cta{ display:flex; gap: 12px; flex-wrap: wrap }
+
+    /* Mock card */
     .card{
       background: linear-gradient(180deg, #161625cc, #131323cc);
       border: 1px solid #ffffff12; border-radius: var(--radius);
@@ -140,6 +142,8 @@
       background: #23233a; color: #fff; border: 1px solid #ffffff10;
     }
     .bubble.me{ background: #2d2152; border-color: #7c3aed55 }
+
+    /* Sections */
     .section{ padding: 64px 0 }
     .features{
       display:grid; gap: 16px;
@@ -149,12 +153,15 @@
     .feature h3{ margin: 0 0 6px; font-size: 18px }
     .feature p{ margin: 0; color: var(--text-dim) }
     .kicker{ color: var(--accent-2); font-weight: 700; letter-spacing:.14em; text-transform: uppercase; font-size: 12px }
+
     .stepper{ display:grid; gap: 14px; grid-template-columns: repeat(3, 1fr) }
     .step .num{
       width: 28px; height: 28px; border-radius: 999px; display:inline-grid; place-items:center;
       background: #ffffff10; border: 1px solid #ffffff18; margin-bottom: 8px;
       font-weight:700; color: var(--accent-2)
     }
+
+    /* Footer */
     footer{
       padding: 36px 0; color: var(--text-dim); border-top: 1px solid #ffffff10; background: var(--bg-soft)
     }
@@ -162,6 +169,10 @@
     .footgrid{
       display:grid; gap: 18px; grid-template-columns: 1fr auto;
     }
+    .footlinks{
+      display:flex; gap:14px; align-items:center; flex-wrap:wrap; justify-content:flex-end;
+    }
+    footer .brand .logo-img{ width: 18px; height: 18px; }
 
     /* Responsive */
     @media (max-width: 920px){
@@ -174,6 +185,12 @@
         display:flex; position: absolute; left:0; right:0; top:64px; padding: 12px 20px; gap: 8px;
         background: rgba(11,11,18,.95); border-bottom: 1px solid #ffffff10;
       }
+    }
+    @media (max-width: 600px){
+      .footgrid{ grid-template-columns: 1fr; text-align:center; gap:24px; }
+      .brand{ justify-content: center; }
+      .footlinks{ justify-content: center; }
+      .logo-img{ width:18px; height:18px; }
     }
     @media (max-width: 580px){
       .features{ grid-template-columns: 1fr }
@@ -195,7 +212,7 @@
         <a href="#contact">Contact</a>
         <!--
         <a class="btn secondary" href="#download" aria-label="Get the app">Get the app</a>
-      -->
+        -->
       </nav>
       <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false" id="navToggle">☰</button>
     </div>
@@ -215,9 +232,9 @@
         </div>
 
         <div class="cta">
-            <!--
+          <!--
           <a class="btn" href="#download" aria-label="Download Kyotee">
-            <span>Download the app</span> ➜          
+            <span>Download the app</span> ➜
           </a>
           -->
           <a class="btn secondary" href="#contact">Talk to us</a>
@@ -229,19 +246,18 @@
         <div>
           <div class="bubble">hey! made it to the summit 🌄</div>
           <div class="bubble me">No way! Pics or it didn’t happen!</div>
-          <!-- Replace "uploading now..." with an image -->
-            <div style="
-              display: flex;
-              justify-content: center;
-              background: #23233a;
-              border: 1px solid #ffffff10;
-              border-radius: 12px;
-              padding: 8px;
-              max-width: 250px;
-            ">
-              <img src="/view.jpg" alt="Mountain view"
-                   style="max-width: 100%; border-radius: 8px;" />
-            </div>
+          <!-- Inline image instead of “uploading now…” -->
+          <div style="
+            display: flex;
+            justify-content: center;
+            background: #23233a;
+            border: 1px solid #ffffff10;
+            border-radius: 12px;
+            padding: 8px;
+            max-width: 250px;
+          ">
+            <img src="/view.jpg" alt="Mountain view" style="max-width: 100%; border-radius: 8px;" />
+          </div>
           <div class="bubble me">🔥</div>
         </div>
       </div>
@@ -323,8 +339,9 @@
     </div>
   </section>
 
-  <!-- Download / CTA -->
-  <!--section id="download" class="section">
+  <!-- Download / CTA (commented until launch) -->
+  <!--
+  <section id="download" class="section">
     <div class="container">
       <div class="card" style="padding:24px; display:flex; gap:16px; align-items:center; justify-content:space-between; flex-wrap:wrap">
         <div>
@@ -339,24 +356,24 @@
       </div>
     </div>
   </section>
--->
+  -->
 
-<section class="section" style="text-align: center; background: var(--bg-soft); padding: 80px 20px;">
-  <h1 style="font-size: 4.5rem; margin: 0; color: var(--accent); font-weight: 900;">
-    🚀 Coming Soon
-  </h1>
-  <p style="color: var(--text-dim); margin-top: 16px; font-size: 1.5rem;">
-    Kyotee is launching soon. Stay tuned!
-  </p>
-</section>
-
+  <!-- Big Coming Soon block -->
+  <section class="section" style="text-align: center; background: var(--bg-soft); padding: 80px 20px;">
+    <h1 style="font-size: 4.5rem; margin: 0; color: var(--accent); font-weight: 900;">
+      🚀 Coming Soon
+    </h1>
+    <p style="color: var(--text-dim); margin-top: 16px; font-size: 1.5rem;">
+      Kyotee is launching soon. Stay tuned!
+    </p>
+  </section>
 
   <!-- Footer -->
   <footer id="contact">
     <div class="container footgrid">
       <div>
         <div class="brand" style="margin-bottom:8px">
-         <img src="/logo.png" alt="Kyotee Logo" class="logo-img" />
+          <img src="/logo.png" alt="Kyotee Logo" class="logo-img" />
           <strong>Kyotee</strong>
         </div>
         <div>
@@ -367,7 +384,7 @@
           </small>
         </div>
       </div>
-      <div style="display:flex; gap:14px; align-items:center; flex-wrap:wrap">
+      <div class="footlinks">
         <a href="/privacy.html">Privacy</a>
         <a href="/terms.html">Terms</a>
         <a href="/security.html">Security</a>
