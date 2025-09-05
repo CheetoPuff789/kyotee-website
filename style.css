@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  background: purple;
+  color: white;
+  padding: 2rem;
+}
+
+.logo-img {
+  height: 16px;       /* smaller height */
+  width: auto;        /* keep aspect ratio */
+  max-height: 16px;   /* absolute limit */
+  max-width: 120px;   /* keeps long logos from stretching */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+footer .logo-img {
+  height: 20px;
+  max-height: 20px;
+  max-width: 140px;
+}
+
+
+h1 {
+  margin: 0;
+}
+
+main {
+  padding: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: purple;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
